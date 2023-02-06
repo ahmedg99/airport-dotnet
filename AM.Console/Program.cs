@@ -39,3 +39,32 @@ Plane plane5 = new Plane
 };
 
 
+Passenger passenger1 = new Passenger
+{
+   FirstName = "ahmed" , 
+   LastName = "gouiaa" , 
+   EmailAddress="ahmed.gouiaa@esprit.tn"
+};
+
+Staff staff1 = new()
+{
+    FirstName = "ahmed",
+    LastName = "debbiche",
+    EmailAddress = "ahmed.debbiche@esprit.tn"
+};
+Traveller traveller = new()
+{
+    FirstName = "mahdi",
+    LastName = "Dridi",
+    EmailAddress = "mahdi.dridi@esprit.tn"
+
+};
+
+ 
+
+
+Console.WriteLine(passenger1.login("ahmed", "gouiaa"));
+Console.WriteLine(passenger1.login("ahmed", "gouiaa","ahmed.debbiche@esprit.tn"));
+passenger1.PassengerType();  // cette methode va printer "I am passenger "
+
+
