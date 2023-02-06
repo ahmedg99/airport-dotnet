@@ -13,5 +13,6 @@ namespace AM.ApplicationCore.Interfaces
         public IList<Flight> GetFlights(string filterType, string filterValue);
 
         public void ShowFlightDetails(Plane plane);
+        // fgh
     }
 }
