@@ -14,5 +14,14 @@ namespace AM.ApplicationCore.Interfaces
 
         public void ShowFlightDetails(Plane plane);
         // fgh
+
+        public int ProgrammedFlightNumber(DateTime startDate);
+        public double DurationAverage(string destination);
+        public void OrderedDurationFlights();
+
+        public void SeniorTravellers(Flight flight);
+        public void DestinationGroupedFlights();
+
+
     }
 }
