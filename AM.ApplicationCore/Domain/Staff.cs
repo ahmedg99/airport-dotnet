@@ -18,7 +18,7 @@ namespace AM.ApplicationCore.Domain
         public override void PassengerType()
         {
             base.PassengerType(); // implémentation de la méthode PassengerType de la classe mere
-            Console.WriteLine("I am staff");
+            System.Console.WriteLine("I am staff");
         }
     }
 

@@ -13,7 +13,7 @@ namespace AM.ApplicationCore.Domain
 
         public override void PassengerType()
         {
-            Console.WriteLine("I am traveller ");
+            System.Console.WriteLine("I am traveller ");
          }
     }
 }

@@ -1,6 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Services;
+using AM.Console;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 
 #region
@@ -23,8 +28,9 @@ Console.WriteLine("plane instance was created !");
 */
 #endregion
 
-
+#region
 // initialiseur d'objet 
+/*
 Plane plane4 = new Plane
 {
     Capacity = 1000,
@@ -66,5 +72,47 @@ Traveller traveller = new()
 Console.WriteLine(passenger1.login("ahmed", "gouiaa"));
 Console.WriteLine(passenger1.login("ahmed", "gouiaa","ahmed.debbiche@esprit.tn"));
 passenger1.PassengerType();  // cette methode va printer "I am passenger "
+
+*/
+
+#endregion
+
+ ServiceFlight serviceFlight = new ServiceFlight();
+
+    IList<DateTime>  listedates = serviceFlight.GetFlightDates("Paris");
+    Console.WriteLine("dates of flights according to a gived destination ");
+
+    foreach (DateTime date in listedates)
+    {
+        Console.WriteLine("date de fligh" + date);
+    }
+
+    Console.WriteLine("ordred flights ");
+    IList<Flight> listOrdred = serviceFlight.OrderedDurationFlights();
+    foreach(Flight f in listOrdred)
+    {
+        Console.WriteLine(f.toString());
+    }
+
+
+serviceFlight.DestinationGroupedFlights();
+
+
+
+Dictionary<String, List<Flight>> map1 = serviceFlight.DestinationGroupedFlights();
+
+
+foreach (var kvp in map1)
+{
+    Console.WriteLine("Destination: " + kvp.Key);
+
+    foreach (var flight in kvp.Value)
+    {
+        Console.WriteLine(flight.toString());
+     }
+}
+
+
+
 
 

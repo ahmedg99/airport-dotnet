@@ -15,7 +15,26 @@ namespace AM.ApplicationCore.Domain
         public string Departure { get; set; }
         public string Destination { get; set; }
 
-        public Plane plane { get; set; } 
-        public ICollection<Passenger> Passengers { get; set;}
+        public Plane Plane { get; set; }
+        public ICollection<Passenger> Passengers { get; set; }
+
+ 
+
+
+        public String toString()
+        {
+           
+            return " flight id  " + FlightId +
+                    " flight date  " + FlightDate +
+                    "EstimatedDuration " + EstimatedDuration
+                    + "EffectiveArrival" + EffectiveArrival
+                    ;
+        }
+
+   
+
+
+
     }
 }
+    

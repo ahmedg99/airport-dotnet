@@ -1,5 +1,6 @@
 ﻿using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
+using AM.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,15 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
 namespace AM.ApplicationCore.Services
 {
     public class ServiceFlight : IServiceFlight
     {
 
-        IList<Flight> listeFlights = new List<Flight>() ; 
+        IList<Flight> listeFlights = TestData.listFlights ; 
 
         public IList<DateTime> GetFlightDates(string destination)
         {
@@ -66,7 +70,7 @@ namespace AM.ApplicationCore.Services
         public void ShowFlightDetails(Plane plane)
         {
             var query = from flight in listeFlights
-                        where flight.plane == plane
+                        where flight.Plane == plane
                         select new { flight.FlightDate, flight.Destination }; 
                         //or select ( flight.FlightDate, flight.Destination )  
 
@@ -76,19 +80,20 @@ namespace AM.ApplicationCore.Services
             //query.ToList().ForEach(flight => { Console.WriteLine("destination : " + flight.Destination + "date : " + flight.FlightDate); }); 
             foreach(var flight in query)
             {
-                Console.WriteLine(flight.Destination);
+                System.Console.WriteLine(flight.Destination);
+                             
             }
 
             // avec lamda expression 1
 
-            query.ToList().ForEach(flight => { Console.WriteLine(flight.Destination); });
+            query.ToList().ForEach(flight => { System.Console.WriteLine(flight.Destination); });
 
 
             // another query 
             var query2 = plane.flights
                          .Select(f => (f.FlightDate, f.Destination));
 
-            query2.ToList().ForEach(flight => { Console.WriteLine(flight); });
+            query2.ToList().ForEach(flight => { System.Console.WriteLine(flight); });
 
 
 
@@ -155,20 +160,26 @@ namespace AM.ApplicationCore.Services
          }
 
 
-        public void OrderedDurationFlights()
+        public List<Flight> OrderedDurationFlights()
         {
+            /*
             var query = from flight in listeFlights
                         orderby flight.EstimatedDuration descending
                         select flight;
-            Console.WriteLine("les Vols ordonnés par EstimatedDuration du plus long au plus court");
+            */
+
+           // System.Console.WriteLine("les Vols ordonnés par EstimatedDuration du plus long au plus court");
 
 
-            foreach (var flight in query)
+            /*foreach (var flight in query)
             {
-                Console.WriteLine(flight.ToString());  
+               // System.Console.WriteLine(flight.ToString());  
             }
+            */
             // avec lambda 
-            query.ToList().ForEach(f => Console.WriteLine(f.ToString()));
+            // query.ToList().ForEach(f => System.Console.WriteLine(f.ToString()));
+
+            return listeFlights.OrderByDescending(f => f.EstimatedDuration).ToList();
 
         }
 
@@ -218,8 +229,11 @@ namespace AM.ApplicationCore.Services
 
         }
 
-        public void DestinationGroupedFlights()
+        public Dictionary<String, List<Flight>> DestinationGroupedFlights()
         {
+
+            //Dictionary<String, Flight> map1= new Dictionary<String, Flight>();
+            /*
 
             var query = from f in listeFlights.GroupBy(f => f.Destination)  
                          select f;
@@ -229,40 +243,66 @@ namespace AM.ApplicationCore.Services
 
 
 
-            Console.WriteLine("les vols groupés par destination");
+            System.Console.WriteLine("les vols groupés par destination");
+
+            */
+
+            // avec for each
+            /*
+           foreach (var group in query)
+           {
+               var groupKey = group.Key;
+               System.Console.WriteLine("Destination " + groupKey);
+
+               foreach (var groupedItem in group)
+               {
+                   System.Console.WriteLine("Décollage : " + groupedItem.FlightDate  ); 
+               }
+            */
+
+            // avec lambda 
+            /*
+
+                listeFlights.GroupBy(f=>f.Destination).ToList().ForEach(group =>
+                {
+                   
+                    var groupKey = group.Key;
+                    //System.Console.WriteLine("Destination " + groupKey);
+                    group.ToList().ForEach(groupItem => {
+                        //System.Console.WriteLine("Décollage : " + groupItem.FlightDate);
+                        map1.Add(groupKey, groupItem);
+                    }); 
+                });
 
 
+            return map1;
+            */
+            var dictionary = new Dictionary<string, List<Flight>>();
 
-            // avec for each  
-            foreach (var group in query)
+            listeFlights.GroupBy(f => f.Destination).ToList().ForEach(group =>
             {
                 var groupKey = group.Key;
-                Console.WriteLine("Destination " + groupKey);
+                var groupItems = group.ToList();
 
-                foreach (var groupedItem in group)
-                {
-                    Console.WriteLine("Décollage : " + groupedItem.FlightDate  ); 
-                }
+                // Create a new list of flights for this destination
+                var destinationFlights = new List<Flight>();
 
-              // avec lambda 
-                
-                query.ToList().ForEach(group =>
-                {
-                    var groupKey = group.Key;
-                    Console.WriteLine("Destination " + groupKey);
-                    group.ToList().ForEach(groupItem => {
-                        Console.WriteLine("Décollage : " + groupItem.FlightDate);
-                    }); 
-                }); 
-                 
+                groupItems.ForEach(groupItem => {
+                    destinationFlights.Add(groupItem);
+                });
+
+                // Try to add the key-value pair to the dictionary
+                dictionary.TryAdd(groupKey, destinationFlights);
+            });
+
+            return dictionary;
 
 
 
-
-            }
+        }
 
 
         }
  
     }
-}
+

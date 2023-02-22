@@ -9,4 +9,5 @@ namespace AM.ApplicationCore.Services
     internal class PassengerExtension
     {
     }
+
 }

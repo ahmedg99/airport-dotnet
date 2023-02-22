@@ -5,6 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AM.ApplicationCore.Domain
 {
     public class Passenger
@@ -55,7 +56,7 @@ namespace AM.ApplicationCore.Domain
         public virtual void PassengerType()
         {
             // cwl (shortcut to write " console.writeln " ) + 2 tab 
-            Console.WriteLine("I am a passenger ");
+            System.Console.WriteLine("I am a passenger ");
          }
 
         

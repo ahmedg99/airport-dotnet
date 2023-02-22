@@ -17,12 +17,12 @@ namespace AM.ApplicationCore.Interfaces
 
         public int ProgrammedFlightNumber(DateTime startDate);
         public double DurationAverage(string destination);
-        public void OrderedDurationFlights();
+        public List<Flight> OrderedDurationFlights();
         public List<Flight> OrderedDurationFlights1();
 
 
         public IEnumerable<Traveller> SeniorTravellers(Flight flight);
-        public void DestinationGroupedFlights();
+        public Dictionary<String, List<Flight>> DestinationGroupedFlights();
 
 
     }
