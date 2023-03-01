@@ -96,11 +96,7 @@ passenger1.PassengerType();  // cette methode va printer "I am passenger "
 
 
 serviceFlight.DestinationGroupedFlights();
-
-
-
 Dictionary<String, List<Flight>> map1 = serviceFlight.DestinationGroupedFlights();
-
 
 foreach (var kvp in map1)
 {
@@ -111,6 +107,9 @@ foreach (var kvp in map1)
         Console.WriteLine(flight.toString());
      }
 }
+
+// sf/methods
+
 
 
 

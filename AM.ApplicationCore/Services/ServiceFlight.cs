@@ -18,7 +18,7 @@ namespace AM.ApplicationCore.Services
     public class ServiceFlight : IServiceFlight
     {
 
-        IList<Flight> listeFlights = TestData.listFlights ; 
+    public  IList<Flight> listeFlights = TestData.listFlights ; 
 
         public IList<DateTime> GetFlightDates(string destination)
         {
