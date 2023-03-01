@@ -18,7 +18,7 @@ namespace AM.ApplicationCore.Domain
         public Plane Plane { get; set; }
         public ICollection<Passenger> Passengers { get; set; }
 
- 
+        public string AirlineLog { get; set; }
 
 
         public String toString()

@@ -26,13 +26,11 @@ namespace Am.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-
-
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;
             Initial Catalog=AirportManagementDB;Integrated Security=true");
             base.OnConfiguring(optionsBuilder);
         }
+        
 
 
 

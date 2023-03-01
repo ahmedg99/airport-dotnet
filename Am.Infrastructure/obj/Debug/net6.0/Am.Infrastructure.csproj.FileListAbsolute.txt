@@ -1,0 +1,17 @@
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\Am.Infrastructure.deps.json
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\Am.Infrastructure.runtimeconfig.json
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\Am.Infrastructure.dll
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\Am.Infrastructure.pdb
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\AM.ApplicationCore.dll
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\bin\Debug\net6.0\AM.ApplicationCore.pdb
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.AssemblyInfo.cs
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.csproj.CopyComplete
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.dll
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\refint\Am.Infrastructure.dll
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.pdb
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\Am.Infrastructure.genruntimeconfig.cache
+C:\Users\Msi\Desktop\dotNetProjects\firstprojectaereport\AirportMangement\Am.Infrastructure\obj\Debug\net6.0\ref\Am.Infrastructure.dll
