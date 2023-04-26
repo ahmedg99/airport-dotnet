@@ -1159,6 +1159,9 @@
       "AM.ApplicationCore/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.3"
+        },
         "compile": {
           "bin/placeholder/AM.ApplicationCore.dll": {}
         },

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,27 +14,43 @@ namespace AM.ApplicationCore.Domain
     public class Passenger
     {
         //Id , ID , PassengerId ces nom vont etre par defaut primary key 
-        public int Id { get; set; }
+        // public int Id { get; set; }
+
+        
+        [Key]
+        [StringLength(100)]
         public string  ? PassportNumber { get; set; }
-        public string ?  FirstName { get; set; }
-        public string  ? LastName { get; set; }
+        public FullName FullName { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayName("date of birth")]
         public DateTime BirthDate { get; set; }
+        [RegularExpression(@"^[0-9]{8}$", ErrorMessage = "Invalid Phone Number!")]
         public int TelNumber { get; set; }
+        [EmailAddress]
         public string  ? EmailAddress { get; set; }
         public  ICollection<Flight> ? Flights { get; set; }
+
+        public ICollection<ReservationTicket>? ReservationTickets { get; set; }
+
+
+
+
+
+
 
         // polymorphisme signature : 
         // 1 er methode 
         public bool checkProfile(string nom, string prenom)
         {
 
-            return (FirstName.Equals(prenom) && LastName.Equals(nom)); 
+            return (FullName.FirstName.Equals(prenom) && FullName.LastName.Equals(nom)); 
  
         }
         // 2 eme methode 
         public bool checkProfile(string nom, string prenom, string email)
         {
-            return (FirstName.Equals(prenom) && LastName.Equals(nom)&& EmailAddress.Equals(email));
+            return (FullName.FirstName.Equals(prenom) && FullName.LastName.Equals(nom)&& EmailAddress.Equals(email));
         }
         //3eme methode login  : 
 
@@ -46,7 +65,7 @@ namespace AM.ApplicationCore.Domain
 
         public override string? ToString()
         {
-            return "passport id : " + PassportNumber + "first name : " + FirstName  ;
+            return "passport id : " + PassportNumber + "first name : " + FullName.FirstName  ;
         }
 
 
